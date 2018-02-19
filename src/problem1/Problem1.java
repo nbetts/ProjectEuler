@@ -1,19 +1,15 @@
 package problem1;
 
 public class Problem1 {
-    public static int getSumOfFactors3And5(int upperBound) {
+    public static void main(String[] args) {
         int sum = 0;
         
-        for (int i = 1; i < upperBound; i++) {
+        for (int i = 1; i < 1000; i++) {
             if (i % 3 == 0 || i % 5 == 0) {
                 sum += i;
             }
         }
         
-        return sum;
-    }
-    
-    public static void main(String[] args) {
-        System.out.println(getSumOfFactors3And5(1000));
+        System.out.println(sum);
     }
 }
