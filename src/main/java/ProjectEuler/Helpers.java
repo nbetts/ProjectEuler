@@ -64,7 +64,7 @@ public class Helpers {
   /**
    * Read the contents of a file into a 2D array of ints.
    */
-  public static int[][] readFile(String filename) {
+  public static int[][] readFileNumbers2D(String filename) {
     try {
       List<String> lines = Files.readAllLines(Paths.get(filename));
       int[][] array = new int[lines.size()][lines.get(0).split(" ").length];
