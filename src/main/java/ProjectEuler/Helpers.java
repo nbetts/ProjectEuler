@@ -94,7 +94,6 @@ public class Helpers {
 
       for (int i = 0; i < lines.size(); i++) {
         String[] numbers = lines.get(i).split(" ");
-        System.out.println(numbers.length);
 
         for (int j = 0; j < numbers.length; j++) {
           array[i][j] = Integer.parseInt(numbers[j]);
