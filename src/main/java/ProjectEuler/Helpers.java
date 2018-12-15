@@ -1,5 +1,10 @@
 package ProjectEuler;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+
 public class Helpers {
   private Helpers() { }
 
@@ -28,5 +33,29 @@ public class Helpers {
     }
 
     return true;
+  }
+
+  /**
+   * Read the contents of a file into a 2D array of ints.
+   */
+  public static int[][] readFile(String filename) {
+    try {
+      List<String> lines = Files.readAllLines(Paths.get(filename));
+      int[][] array = new int[lines.size()][lines.get(0).split(" ").length];
+
+      for (int i = 0; i < lines.size(); i++) {
+        String[] numbers = lines.get(i).split(" ");
+
+        for (int j = 0; j < numbers.length; j++) {
+          array[i][j] = Integer.parseInt(numbers[j]);
+        }
+      }
+
+      return array;
+    } catch (IOException exception) {
+      exception.printStackTrace();
+    }
+
+    return null;
   }
 }
