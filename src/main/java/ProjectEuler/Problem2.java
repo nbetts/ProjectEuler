@@ -5,7 +5,7 @@ public class Problem2 implements Solvable {
     int upperBound = 4000000;
     int previousFibonacciValue = 0;
     int currentFibonacciValue = 1;
-    int temp, sum = 0;
+    int temp, answer = 0;
 
     while (currentFibonacciValue < upperBound) {
       temp = currentFibonacciValue;
@@ -13,10 +13,10 @@ public class Problem2 implements Solvable {
       previousFibonacciValue = temp;
 
       if ((currentFibonacciValue & 1) == 0) {
-        sum += currentFibonacciValue;
+        answer += currentFibonacciValue;
       }
     }
 
-    return Integer.toString(sum);
+    return Integer.toString(answer);
   }
 }
