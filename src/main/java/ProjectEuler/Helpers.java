@@ -62,6 +62,19 @@ public class Helpers {
   }
 
   /**
+   * Read the contents of a file into an array of strings.
+   */
+  public static String[] readFileLines(String filename) {
+    try {
+      return Files.readAllLines(Paths.get(filename)).toArray(new String[0]);
+    } catch (IOException exception) {
+      exception.printStackTrace();
+    }
+
+    return null;
+  }
+
+  /**
    * Read the contents of a file into a 2D array of ints.
    */
   public static int[][] readFileNumbers2D(String filename) {
