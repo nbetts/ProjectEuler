@@ -80,10 +80,10 @@ public class Helpers {
   public static int[][] readFileNumbers2D(String filename) {
     try {
       List<String> lines = Files.readAllLines(Paths.get(filename));
-      int maxArrayLength = lines.get(0).split(" ").length;
+      int maxArrayLength = lines.get(0).trim().split(" ").length;
 
       for (String line : lines) {
-        int arrayLength = line.split(" ").length;
+        int arrayLength = line.trim().split(" ").length;
 
         if (arrayLength > maxArrayLength) {
           maxArrayLength = arrayLength;
@@ -93,7 +93,7 @@ public class Helpers {
       int[][] array = new int[lines.size()][maxArrayLength];
 
       for (int i = 0; i < lines.size(); i++) {
-        String[] numbers = lines.get(i).split(" ");
+        String[] numbers = lines.get(i).trim().split("\\s+");
 
         for (int j = 0; j < numbers.length; j++) {
           array[i][j] = Integer.parseInt(numbers[j]);
