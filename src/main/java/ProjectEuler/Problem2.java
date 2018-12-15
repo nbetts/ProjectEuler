@@ -2,13 +2,12 @@ package ProjectEuler;
 
 public class Problem2 implements Solvable {
   public String solve() {
-    int upperBound = 4000000;
-    int previousFibonacciValue = 0;
-    int currentFibonacciValue = 1;
-    int temp, answer = 0;
+    int answer = 0,
+        previousFibonacciValue = 0,
+        currentFibonacciValue = 1;
 
-    while (currentFibonacciValue < upperBound) {
-      temp = currentFibonacciValue;
+    while (currentFibonacciValue < 4000000) {
+      int temp = currentFibonacciValue;
       currentFibonacciValue = currentFibonacciValue + previousFibonacciValue;
       previousFibonacciValue = temp;
 
