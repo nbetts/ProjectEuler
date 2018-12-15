@@ -6,19 +6,19 @@ public class Problem4 implements Solvable {
 
     for (int i = 999; i > 99; i--) {
       for (int j = i; j > 99; j--) {
-        int result = i * j;
-        String resultString = Integer.toString(result);
+        int product = i * j;
+        String string = Integer.toString(product);
         boolean isPalindrome = true;
 
-        for (int k = 0; k < resultString.length()/2; k++) {
-          if (resultString.charAt(k) != resultString.charAt(resultString.length()-1-k)) {
+        for (int k = 0; k < string.length()/2; k++) {
+          if (string.charAt(k) != string.charAt(string.length()-1-k)) {
             isPalindrome = false;
             break;
           }
         }
 
-        if (isPalindrome && result > answer) {
-          answer = result;
+        if (isPalindrome && product > answer) {
+          answer = product;
         }
       }
     }
