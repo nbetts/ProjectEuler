@@ -1,8 +1,9 @@
-## Building the program
+## Running the Program
 
-| Command                        | Description         |
-|--------------------------------|---------------------|
-| `./gradlew build`              | Build the program.  |
-| `./gradlew run -q --args='1'`  | Run problem 1.      |
+In the top level directory, run:
 
-For Windows users, replace `./gradlew` with `./gradlew.bat`.
+`./gradlew run -q --args=1`
+
+Replace `--args=1` with any problem number, e.g. `--args=16`
+
+On Windows, replace `./gradlew` with `./gradlew.bat`
