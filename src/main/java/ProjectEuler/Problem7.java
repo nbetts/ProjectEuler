@@ -2,7 +2,7 @@ package ProjectEuler;
 
 public class Problem7 implements Solvable {
   public String solve() {
-    int answer = 0;
+    long answer = 0;
 
     for (int i = 3, counter = 1; counter < 10001; i += 2) {
       if (Helpers.isPrime(i)) {

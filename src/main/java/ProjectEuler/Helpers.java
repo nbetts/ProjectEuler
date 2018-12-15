@@ -13,7 +13,7 @@ public class Helpers {
    * Determine if a number n is prime.
    * Original method: https://stackoverflow.com/a/1801446
    */
-  public static boolean isPrime(int n) {
+  public static boolean isPrime(long n) {
     if (n == 2 || n == 3) {
       return true;
     }
@@ -22,7 +22,7 @@ public class Helpers {
       return false;
     }
 
-    int i = 5, w = 2;
+    long i = 5, w = 2;
 
     while (i * i <= n) {
       if (n % i == 0) {
@@ -40,7 +40,7 @@ public class Helpers {
    * Calculate the nth triangle number.
    */
   public static long triangleNumber(long n) {
-    return n * (n + 1L) / 2L;
+    return n * (n + 1) / 2;
   }
 
   /**
