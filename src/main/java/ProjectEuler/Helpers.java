@@ -3,6 +3,7 @@ package ProjectEuler;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Helpers {
@@ -33,6 +34,31 @@ public class Helpers {
     }
 
     return true;
+  }
+
+  /**
+   * Calculate the nth triangle number.
+   */
+  public static long triangleNumber(long n) {
+    return n * (n + 1L) / 2L;
+  }
+
+  /**
+   * Return an int array of factors of n.
+   */
+  public static long[] factors(long n) {
+    ArrayList<Long> factors = new ArrayList<>();
+
+    for (int i = 1; i <= Math.sqrt((double)n); i++) {
+      long l = (long) i;
+
+      if (n % l == 0) {
+        factors.add(l);
+        factors.add(n / l);
+      }
+    }
+
+    return factors.stream().mapToLong(Long::longValue).toArray();
   }
 
   /**
