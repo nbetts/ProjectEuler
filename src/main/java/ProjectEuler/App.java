@@ -8,7 +8,7 @@ public class App {
     }
 
     try {
-      Problem problem = (Problem) Class.forName("ProjectEuler.Problem" + args[0]).newInstance();
+      Solvable problem = (Solvable) Class.forName("ProjectEuler.Problem" + args[0]).newInstance();
       System.out.println(problem.solve());
     } catch (Exception exception) {
       exception.printStackTrace();

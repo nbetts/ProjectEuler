@@ -1,6 +1,6 @@
 package ProjectEuler;
 
-public class Problem2 implements Problem {
+public class Problem2 implements Solvable {
   public String solve() {
     int upperBound = 4000000;
     int previousFibonacciValue = 0;

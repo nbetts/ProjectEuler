@@ -1,5 +1,5 @@
 package ProjectEuler;
 
-public interface Problem {
+public interface Solvable {
   public String solve();
 }

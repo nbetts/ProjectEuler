@@ -1,6 +1,6 @@
 package ProjectEuler;
 
-public class Problem1 implements Problem {
+public class Problem1 implements Solvable {
   public String solve() {
     int sum = 0;
 
