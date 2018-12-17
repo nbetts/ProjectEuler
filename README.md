@@ -6,4 +6,4 @@ In the top level directory, run:
 
 Replace `--args=1` with any problem number, e.g. `--args=16`
 
-On Windows, replace `./gradlew` with `./gradlew.bat`
+On Windows, replace `./gradlew` with `gradlew.bat`
