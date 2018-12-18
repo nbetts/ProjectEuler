@@ -45,7 +45,7 @@ public class MathHelpers {
   public static long[] factors(long n) {
     ArrayList<Long> factors = new ArrayList<>();
 
-    for (int i = 1; i <= Math.sqrt((double)n); i++) {
+    for (int i = 1; i <= Math.sqrt(n); i++) {
       long l = (long) i;
 
       if (n % l == 0) {
