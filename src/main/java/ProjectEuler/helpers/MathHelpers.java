@@ -46,7 +46,7 @@ public class MathHelpers {
     ArrayList<Long> factors = new ArrayList<>();
 
     for (int i = 1; i <= Math.sqrt(n); i++) {
-      long l = (long) i;
+      long l = i;
 
       if (n % l == 0) {
         factors.add(l);
