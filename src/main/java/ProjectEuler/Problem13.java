@@ -4,7 +4,7 @@ import java.math.BigInteger;
 
 public class Problem13 implements Solvable {
   public String solve() {
-    String[] numbers = Helpers.readFileLines("resources/Problem13.txt");
+    String[] numbers = FileHelpers.readFileLines("resources/Problem13.txt");
     BigInteger sum = BigInteger.ZERO;
 
     for (int i = 0; i < numbers.length; i++) {

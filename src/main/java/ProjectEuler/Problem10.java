@@ -5,7 +5,7 @@ public class Problem10 implements Solvable {
     long answer = 2;
 
     for (int i = 3; i < 2000000; i += 2) {
-      if (Helpers.isPrime(i)) {
+      if (MathHelpers.isPrime(i)) {
         answer += i;
       }
     }

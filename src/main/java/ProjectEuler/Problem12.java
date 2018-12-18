@@ -5,9 +5,9 @@ public class Problem12 implements Solvable {
     long answer;
 
     for (int i = 1; ; i++) {
-      answer = Helpers.triangleNumber(i);
+      answer = MathHelpers.triangleNumber(i);
 
-      if (Helpers.factors(answer).length > 500) {
+      if (MathHelpers.factors(answer).length > 500) {
         break;
       }
     }

@@ -2,7 +2,7 @@ package ProjectEuler;
 
 public class Problem11 implements Solvable {
   public String solve() {
-    int[][] numbers = Helpers.readFileNumbers2D("resources/Problem11.txt");
+    int[][] numbers = FileHelpers.readFileNumbers2D("resources/Problem11.txt");
     int answer = 0, product, line = 4,
         columnLength = numbers.length, rowLength = numbers[0].length;
 
