@@ -1,12 +1,56 @@
 package ProjectEuler;
 
 import java.io.IOException;
+import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
 public class FileHelpers {
   private FileHelpers() { }
+
+  /**
+   * Write the contents of a string into a file.
+   */
+  public static void createProblem(int problemNumber) {
+    try {
+      Path filePath = Paths.get("src/main/java/ProjectEuler/problems/Problem" + problemNumber + ".java");
+
+      if (Files.exists(filePath)) {
+        throw new FileAlreadyExistsException("Problem " + problemNumber + " already exists.");
+      } else {
+        String template = FileHelpers.readFile("resources/ProblemTemplate.txt");
+        Files.write(filePath, template.replaceAll("Problem", "Problem" + problemNumber).getBytes());
+      }
+    } catch (IOException exception) {
+      exception.printStackTrace();
+    }
+  }
+
+  /**
+   * Write the contents of a string into a file.
+   */
+  public static void writeFile(String filename, String fileContents) {
+    try {
+      Files.write(Paths.get(filename), fileContents.getBytes());
+    } catch (IOException exception) {
+      exception.printStackTrace();
+    }
+  }
+
+  /**
+   * Read the contents of a file into a string.
+   */
+  public static String readFile(String filename) {
+    try {
+      return new String(Files.readAllBytes(Paths.get(filename)));
+    } catch (IOException exception) {
+      exception.printStackTrace();
+    }
+
+    return null;
+  }
 
   /**
    * Read the contents of a file into an array of strings.

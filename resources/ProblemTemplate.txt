@@ -1,0 +1,11 @@
+package ProjectEuler;
+
+public class Problem implements Solvable {
+  public String solve() {
+    int answer = 0;
+
+    // todo
+
+    return Integer.toString(answer);
+  }
+}
