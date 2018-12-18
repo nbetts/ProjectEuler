@@ -71,10 +71,10 @@ public class FileHelpers {
   public static int[][] readFileNumbers2D(String filename) {
     try {
       List<String> lines = Files.readAllLines(Paths.get(filename));
-      int maxArrayLength = lines.get(0).trim().split(" ").length;
+      int maxArrayLength = lines.get(0).trim().split("\\s+").length;
 
       for (String line : lines) {
-        int arrayLength = line.trim().split(" ").length;
+        int arrayLength = line.trim().split("\\s+").length;
 
         if (arrayLength > maxArrayLength) {
           maxArrayLength = arrayLength;
