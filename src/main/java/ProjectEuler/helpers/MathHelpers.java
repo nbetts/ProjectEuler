@@ -47,15 +47,13 @@ public class MathHelpers {
     ArrayList<Long> factors = new ArrayList<>();
     ArrayList<Long> upperFactors = new ArrayList<>();
 
-    long sqrt = (long) Math.sqrt(n);
-
-    for (int i = 1; i <= sqrt; i++) {
+    for (int i = 1; i <= Math.sqrt(n); i++) {
       long l = i;
 
       if (n % l == 0) {
         factors.add(l);
 
-        if (l != sqrt) {
+        if (l != n / l) {
           upperFactors.add(n / l);
         }
       }
