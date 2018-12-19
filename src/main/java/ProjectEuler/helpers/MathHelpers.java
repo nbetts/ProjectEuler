@@ -56,4 +56,17 @@ public class MathHelpers {
 
     return factors.stream().mapToLong(Long::longValue).toArray();
   }
+
+  /**
+   * Return the sum of a list of numbers.
+   */
+  public static long sum(long[] numbers) {
+    long sum = 0;
+
+    for (int i = 0; i < numbers.length; i++) {
+      sum += numbers[i];
+    }
+
+    return sum;
+  }
 }
