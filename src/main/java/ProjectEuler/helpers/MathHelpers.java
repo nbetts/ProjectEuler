@@ -1,6 +1,7 @@
 package ProjectEuler;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MathHelpers {
   private MathHelpers() { }
@@ -42,17 +43,30 @@ public class MathHelpers {
   /**
    * Return an int array of factors of n.
    */
-  public static long[] factors(long n) {
+  public static long[] factors(long n, boolean excludeN) {
     ArrayList<Long> factors = new ArrayList<>();
+    ArrayList<Long> upperFactors = new ArrayList<>();
 
-    for (int i = 1; i <= Math.sqrt(n); i++) {
+    long sqrt = (long) Math.sqrt(n);
+
+    for (int i = 1; i <= sqrt; i++) {
       long l = i;
 
       if (n % l == 0) {
         factors.add(l);
-        factors.add(n / l);
+
+        if (l != sqrt) {
+          upperFactors.add(n / l);
+        }
       }
     }
+
+    if (excludeN) {
+      upperFactors.remove(n);
+    }
+
+    Collections.reverse(upperFactors);
+    factors.addAll(upperFactors);
 
     return factors.stream().mapToLong(Long::longValue).toArray();
   }

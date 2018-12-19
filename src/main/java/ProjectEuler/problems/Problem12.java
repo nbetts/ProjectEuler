@@ -7,7 +7,7 @@ public class Problem12 implements Solvable {
     for (int i = 1; ; i++) {
       answer = MathHelpers.triangleNumber(i);
 
-      if (MathHelpers.factors(answer).length > 500) {
+      if (MathHelpers.factors(answer, false).length > 500) {
         break;
       }
     }
