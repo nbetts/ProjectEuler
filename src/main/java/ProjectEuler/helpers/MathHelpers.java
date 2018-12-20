@@ -81,4 +81,17 @@ public class MathHelpers {
 
     return sum;
   }
+
+  /**
+   * Return the factorial of n.
+   */
+  public static long factorial(int n) {
+    long factorial = 1;
+
+    for (int i = 1; i <= n; i++) {
+      factorial *= i;
+    }
+
+    return factorial;
+  }
 }
