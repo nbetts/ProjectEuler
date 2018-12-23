@@ -18,7 +18,7 @@ public class Problem4 implements Solvable {
       for (int j = i; j > 99; j--) {
         int product = i * j;
 
-        if (product > answer && ArrayHelpers.isPalindrome(Integer.toString(product))) {
+        if (product > answer && StringHelpers.isPalindrome(Integer.toString(product))) {
           answer = product;
         }
       }
