@@ -13,15 +13,17 @@ public class FileHelpers {
   /**
    * Write the contents of a string into a file.
    */
-  public static void createProblem(int problemNumber) {
+  public static void createProblem(int number) {
     try {
-      Path filePath = Paths.get("src/main/java/ProjectEuler/problems/Problem" + problemNumber + ".java");
+      int group = number / 10;
+      String path = String.format("src/main/java/ProjectEuler/problems/%d0-%d9/Problem%d.java", group, group, number);
+      Path filePath = Paths.get(path);
 
       if (Files.exists(filePath)) {
-        throw new FileAlreadyExistsException("Problem " + problemNumber + " already exists.");
+        throw new FileAlreadyExistsException("Problem " + number + " already exists.");
       } else {
         String template = FileHelpers.readFile("resources/ProblemTemplate.txt");
-        Files.write(filePath, template.replaceAll("Problem", "Problem" + problemNumber).getBytes());
+        Files.write(filePath, template.replaceAll("Problem", "Problem" + number).getBytes());
       }
     } catch (IOException exception) {
       exception.printStackTrace();
