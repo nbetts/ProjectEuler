@@ -7,7 +7,7 @@ public class MathHelpers {
   private MathHelpers() { }
 
   /**
-   * Determine if a number n is prime.
+   * Return true if a number n is prime.
    * Original method: https://stackoverflow.com/a/1801446
    */
   public static boolean isPrime(long n) {
@@ -34,7 +34,7 @@ public class MathHelpers {
   }
 
   /**
-   * Calculate the nth triangle number.
+   * Return the nth triangle number.
    */
   public static long triangleNumber(long n) {
     return n * (n + 1) / 2;
@@ -67,6 +67,17 @@ public class MathHelpers {
     factors.addAll(upperFactors);
 
     return factors.stream().mapToLong(Long::longValue).toArray();
+  }
+
+  /**
+   * Return the greatest common divisor (gcd) of two numbers.
+   */
+  public static long gcd(long a, long b) {
+    if (b != 0) {
+      return gcd(b, a % b);
+    }
+
+    return a;
   }
 
   /**
