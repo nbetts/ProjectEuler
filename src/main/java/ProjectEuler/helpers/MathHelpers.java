@@ -11,6 +11,10 @@ public class MathHelpers {
    * Original method: https://stackoverflow.com/a/1801446
    */
   public static boolean isPrime(long n) {
+    if (n == 1) {
+      return false;
+    }
+
     if (n == 2 || n == 3) {
       return true;
     }
