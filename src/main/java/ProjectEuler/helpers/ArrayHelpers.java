@@ -1,7 +1,20 @@
 package ProjectEuler;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class ArrayHelpers {
   private ArrayHelpers() { }
+
+  /**
+   * Sort an array in ascending order.
+   */
+  public static <T extends Comparable<? super T>> void sort(T[] array) {
+    List<T> list = Arrays.asList(array);
+    Collections.sort(list);
+    list.toArray(array);
+  }
 
   /**
    * Swap two values in an array.
@@ -15,14 +28,14 @@ public class ArrayHelpers {
   /**
    * Concatenate array elements into a string.
    */
-  public static <T extends Object> String concatenate(T[] numbers) {
-    StringBuilder number = new StringBuilder();
+  public static <T extends Object> String concatenate(T[] values) {
+    String string = "";
 
-    for (int i = 0; i < numbers.length; i++) {
-      number.append(numbers[i].toString());
+    for (T value : values) {
+      string += value.toString();
     }
 
-    return number.toString();
+    return string;
   }
 
   /**

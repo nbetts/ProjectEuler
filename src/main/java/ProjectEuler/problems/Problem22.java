@@ -5,16 +5,7 @@ public class Problem22 implements Solvable {
     int answer = 0;
 
     String[] names = FileHelpers.readFile("resources/Problem22.txt").replaceAll("\"", "").split(",");
-
-    for (int i = 0; i < names.length - 1; i++) {
-      for (int j = i; j < names.length - 1; j++) {
-        if (names[i].compareTo(names[j+1]) > 0) {
-          String temp = names[i];
-          names[i] = names[j+1];
-          names[j+1] = temp;
-        }
-      }
-    }
+    ArrayHelpers.sort(names);
 
     for (int i = 0; i < names.length; i++) {
       char[] letters = names[i].toCharArray();
