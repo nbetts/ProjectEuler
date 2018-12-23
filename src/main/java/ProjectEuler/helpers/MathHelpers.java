@@ -116,4 +116,48 @@ public class MathHelpers {
   public static boolean isPythagoreanTriple(int a, int b, int c) {
     return a * a + b * b == c * c;
   }
+
+  /**
+   * Return true if an number is pandigital.
+   */
+  public static boolean isPandigital(long n, boolean includeZero) {
+    int length = (int) (Math.log10(n) + 1);
+    int[] digits = new int[length];
+    long digitSum = 0;
+    boolean containsZero = false;
+
+    for (int i = 0; i < length; i++) {
+      int digit = (int) n % 10;
+
+      if (digit == 0) {
+        if (includeZero) {
+          containsZero = true;
+        } else {
+          return false;
+        }
+      }
+
+      digits[i] = digit;
+      digitSum += digit;
+      n /= 10;
+    }
+
+    if (digitSum == triangleNumber(containsZero ? length - 1 : length)) {
+      boolean[] includedDigits = new boolean[length + 1];
+
+      for (int j = 1; j <= length; j++) {
+        int digit = digits[length - j];
+
+        if (digit > length || includedDigits[digit]) {
+          return false;
+        }
+
+        includedDigits[digit] = true;
+      }
+
+      return true;
+    }
+
+    return false;
+  }
 }
