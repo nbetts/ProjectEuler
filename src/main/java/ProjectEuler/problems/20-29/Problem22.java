@@ -8,14 +8,7 @@ public class Problem22 implements Solvable {
     ArrayHelpers.sort(names);
 
     for (int i = 0; i < names.length; i++) {
-      char[] letters = names[i].toCharArray();
-      int score = 0;
-
-      for (int j = 0; j < letters.length; j++) {
-        score += letters[j] - 64;
-      }
-
-      answer += score * (i + 1);
+      answer += StringHelpers.score(names[i]) * (i + 1);
     }
 
     return Integer.toString(answer);
