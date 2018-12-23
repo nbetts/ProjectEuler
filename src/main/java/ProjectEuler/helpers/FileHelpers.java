@@ -16,8 +16,13 @@ public class FileHelpers {
   public static void createProblem(int number) {
     try {
       int group = number / 10;
-      String path = String.format("src/main/java/ProjectEuler/problems/%d0-%d9/Problem%d.java", group, group, number);
-      Path filePath = Paths.get(path);
+      Path directory = Paths.get(String.format("src/main/java/ProjectEuler/problems/%d0-%d9/", group, group));
+
+      if (!Files.isDirectory(directory)) {
+        Files.createDirectory(directory);
+      }
+
+      Path filePath = Paths.get(directory.toString(), "Problem" + number + ".java");
 
       if (Files.exists(filePath)) {
         throw new FileAlreadyExistsException("Problem " + number + " already exists.");
