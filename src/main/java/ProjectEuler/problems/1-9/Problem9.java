@@ -7,7 +7,7 @@ public class Problem9 implements Solvable {
         double squareSum = a * a + b * b;
         int c = (int) Math.sqrt(squareSum);
 
-        if (c * c == squareSum && a + b + c == 1000) {
+        if (a + b + c == 1000 && MathHelpers.isPythagoreanTriple(a, b, c)) {
           return Integer.toString(a * b * c);
         }
       }

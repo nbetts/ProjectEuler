@@ -109,4 +109,18 @@ public class MathHelpers {
 
     return factorial;
   }
+
+  /**
+   * Return the hypotenuse of sides a and b.
+   */
+  public static double hypotenuse(double a, double b) {
+    return Math.sqrt(a * a + b * b);
+  }
+
+  /**
+   * Return true if the integers a, b and c form a Pythagorean triple.
+   */
+  public static boolean isPythagoreanTriple(int a, int b, int c) {
+    return a * a + b * b == c * c;
+  }
 }
