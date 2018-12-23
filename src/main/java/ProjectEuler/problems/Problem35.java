@@ -2,7 +2,7 @@ package ProjectEuler;
 
 import java.util.Collections;
 
-public class Problem34 implements Solvable {
+public class Problem35 implements Solvable {
   public String solve() {
     int answer = 1;
 
