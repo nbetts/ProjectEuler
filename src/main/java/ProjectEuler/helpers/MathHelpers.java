@@ -10,7 +10,7 @@ public class MathHelpers {
    * Return true if a number n is prime.
    * Original method: https://stackoverflow.com/a/1801446
    */
-  public static boolean isPrime(long n) {
+  public static final boolean isPrime(long n) {
     if (n == 1) {
       return false;
     }
@@ -40,14 +40,28 @@ public class MathHelpers {
   /**
    * Return the nth triangle number.
    */
-  public static long triangleNumber(long n) {
+  public static final long triangleNumber(long n) {
     return n * (n + 1) / 2;
+  }
+
+  /**
+   * Return the nth pentagonal number.
+   */
+  public static final long pentagonalNumber(long n) {
+    return n * (3 * n - 1) / 2;
+  }
+
+  /**
+   * Return the nth hexagonal number.
+   */
+  public static final long hexagonalNumber(long n) {
+    return n * (2 * n - 1);
   }
 
   /**
    * Return an int array of factors of n.
    */
-  public static long[] factors(long n, boolean excludeN) {
+  public static final long[] factors(long n, boolean excludeN) {
     ArrayList<Long> factors = new ArrayList<>();
     ArrayList<Long> upperFactors = new ArrayList<>();
 
@@ -76,7 +90,7 @@ public class MathHelpers {
   /**
    * Return the greatest common divisor (gcd) of two numbers.
    */
-  public static long gcd(long a, long b) {
+  public static final long gcd(long a, long b) {
     if (b != 0) {
       return gcd(b, a % b);
     }
@@ -87,7 +101,7 @@ public class MathHelpers {
   /**
    * Return the sum of a list of numbers.
    */
-  public static long sum(long[] numbers) {
+  public static final long sum(long[] numbers) {
     long sum = 0;
 
     for (int i = 0; i < numbers.length; i++) {
@@ -100,7 +114,7 @@ public class MathHelpers {
   /**
    * Return the factorial of n.
    */
-  public static long factorial(int n) {
+  public static final long factorial(int n) {
     long factorial = 1;
 
     for (int i = 1; i <= n; i++) {
@@ -113,14 +127,14 @@ public class MathHelpers {
   /**
    * Return true if the integers a, b and c form a Pythagorean triple.
    */
-  public static boolean isPythagoreanTriple(int a, int b, int c) {
+  public static final boolean isPythagoreanTriple(int a, int b, int c) {
     return a * a + b * b == c * c;
   }
 
   /**
    * Return true if an number is pandigital.
    */
-  public static boolean isPandigital(long n, boolean includeZero) {
+  public static final boolean isPandigital(long n, boolean includeZero) {
     int length = (int) (Math.log10(n) + 1);
     int[] digits = new int[length];
     long digitSum = 0;

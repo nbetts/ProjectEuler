@@ -13,7 +13,7 @@ public class FileHelpers {
   /**
    * Write the contents of a string into a file.
    */
-  public static void createProblem(int number) {
+  public static final void createProblem(int number) {
     try {
       int group = number / 10;
       Path directory = Paths.get(String.format("src/main/java/ProjectEuler/problems/%d0-%d9/", group, group));
@@ -38,7 +38,7 @@ public class FileHelpers {
   /**
    * Write the contents of a string into a file.
    */
-  public static void writeFile(String filename, String fileContents) {
+  public static final void writeFile(String filename, String fileContents) {
     try {
       Files.write(Paths.get(filename), fileContents.getBytes());
     } catch (IOException exception) {
@@ -49,7 +49,7 @@ public class FileHelpers {
   /**
    * Read the contents of a file into a string.
    */
-  public static String readFile(String filename) {
+  public static final String readFile(String filename) {
     try {
       return new String(Files.readAllBytes(Paths.get(filename)));
     } catch (IOException exception) {
@@ -62,7 +62,7 @@ public class FileHelpers {
   /**
    * Read the contents of a file into an array of strings.
    */
-  public static String[] readFileLines(String filename) {
+  public static final String[] readFileLines(String filename) {
     try {
       return Files.readAllLines(Paths.get(filename)).toArray(new String[0]);
     } catch (IOException exception) {
@@ -75,7 +75,7 @@ public class FileHelpers {
   /**
    * Read the contents of a file into a 2D array of ints.
    */
-  public static int[][] readFileNumbers2D(String filename) {
+  public static final int[][] readFileNumbers2D(String filename) {
     try {
       List<String> lines = Files.readAllLines(Paths.get(filename));
       int maxArrayLength = lines.get(0).trim().split("\\s+").length;

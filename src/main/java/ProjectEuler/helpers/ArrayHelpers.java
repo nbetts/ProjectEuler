@@ -10,7 +10,7 @@ public class ArrayHelpers {
   /**
    * Sort an array in ascending order.
    */
-  public static <T extends Comparable<? super T>> void sort(T[] array) {
+  public static final <T extends Comparable<? super T>> void sort(T[] array) {
     List<T> list = Arrays.asList(array);
     Collections.sort(list);
     list.toArray(array);
@@ -19,7 +19,7 @@ public class ArrayHelpers {
   /**
    * Swap two values in an array.
    */
-  public static <T extends Object> void swap(T[] array, int first, int second) {
+  public static final <T extends Object> void swap(T[] array, int first, int second) {
     T temp = array[first];
     array[first] = array[second];
     array[second] = temp;
@@ -28,7 +28,7 @@ public class ArrayHelpers {
   /**
    * Concatenate array elements into a string.
    */
-  public static <T extends Object> String concatenate(T[] values) {
+  public static final <T extends Object> String concatenate(T[] values) {
     String string = "";
 
     for (T value : values) {
