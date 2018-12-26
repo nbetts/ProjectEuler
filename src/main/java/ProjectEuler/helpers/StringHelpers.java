@@ -4,10 +4,17 @@ public class StringHelpers {
   private StringHelpers() { }
 
   /**
+   * Reverse a string.
+   */
+  public static String reverse(String string) {
+    return new StringBuilder(string).reverse().toString();
+  }
+
+  /**
    * Return true if a string is a palindrome.
    */
   public static boolean isPalindrome(String string) {
-    return string.equals(new StringBuilder(string).reverse().toString());
+    return string.equals(reverse(string));
   }
 
   /**
