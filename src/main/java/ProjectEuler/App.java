@@ -18,7 +18,13 @@ public class App {
         FileHelpers.createProblem(problemNumber);
       } else {
         Solvable problem = (Solvable) Class.forName("ProjectEuler.Problem" + problemNumber).newInstance();
-        System.out.println(problem.solve());
+
+        try {
+          System.out.println(problem.solve());
+        } catch (Exception exception) {
+          System.out.println("Error in solution:");
+          exception.printStackTrace();
+        }
       }
     } catch (NullPointerException | IllegalArgumentException exception) {
       System.err.println("Please provide a valid problem number, e.g. 1");
