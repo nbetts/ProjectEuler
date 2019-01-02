@@ -59,7 +59,7 @@ public class MathHelpers {
   }
 
   /**
-   * Return an int array of factors of n.
+   * Return an array of factors of n.
    */
   public static final long[] factors(long n, boolean excludeN) {
     ArrayList<Long> factors = new ArrayList<>();
@@ -85,6 +85,37 @@ public class MathHelpers {
     factors.addAll(upperFactors);
 
     return factors.stream().mapToLong(Long::longValue).toArray();
+  }
+
+  /**
+   * Return an array of prime factors of n.
+   */
+  public static final ArrayList<Long> primeFactors(long n) {
+    ArrayList<Long> factors = new ArrayList<>();
+
+    if (isPrime(n)) {
+      factors.add(n);
+    } else {
+      while (n % 2 == 0) {
+        factors.add(2L);
+        n /= 2;
+      }
+
+      for (int i = 3; i <= Math.sqrt(n); i += 2) {
+        long l = i;
+
+        while (n % l == 0) {
+          factors.add(l);
+          n /= l;
+        }
+      }
+
+      if (isPrime(n)) {
+        factors.add(n);
+      }
+    }
+
+    return factors;
   }
 
   /**
