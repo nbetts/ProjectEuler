@@ -1,6 +1,10 @@
 package ProjectEuler;
 
+import java.util.regex.Pattern;
+
 public class StringHelpers {
+  private static Pattern uniqueDigits = Pattern.compile("(?:([1-9])(?![1-9]*\\1))*");
+
   private StringHelpers() { }
 
   /**
@@ -29,5 +33,12 @@ public class StringHelpers {
     }
 
     return score;
+  }
+
+  /**
+   * Return true if a string is comprised of unique digits.
+   */
+  public static boolean isUniqueDigits(String string) {
+    return uniqueDigits.matcher(string).matches();
   }
 }
