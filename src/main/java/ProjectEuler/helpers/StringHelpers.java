@@ -1,11 +1,22 @@
 package ProjectEuler;
 
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
 public class StringHelpers {
   private static Pattern uniqueDigits = Pattern.compile("(?:([1-9])(?![1-9]*\\1))*");
 
   private StringHelpers() { }
+
+  /**
+   * Sort a string.
+   */
+  public static String sort(String string) {
+    char[] characters = string.toCharArray();
+    Arrays.sort(characters);
+
+    return new String(characters);
+  }
 
   /**
    * Reverse a string.
