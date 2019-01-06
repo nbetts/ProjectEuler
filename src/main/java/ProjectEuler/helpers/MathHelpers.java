@@ -7,6 +7,27 @@ public class MathHelpers {
   private MathHelpers() { }
 
   /**
+   * Return a list of prime numbers to the limit.
+   * The algorithm used is the Sieve of Eratosthenes.
+   */
+  public static ArrayList<Integer> primeList(int limit) {
+    ArrayList<Integer> primes = new ArrayList<>();
+    boolean[] composites = new boolean[limit + 1];
+
+    for (int i = 2; i <= limit; i++) {
+      if (!composites[i]) {
+        primes.add(i);
+
+        for (int j = i; j <= limit; j += i) {
+          composites[j] = true;
+        }
+      }
+    }
+
+    return primes;
+  }
+
+  /**
    * Return true if a number n is prime.
    * Original method: https://stackoverflow.com/a/1801446
    */
