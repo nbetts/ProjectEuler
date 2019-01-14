@@ -184,10 +184,17 @@ public class MathHelpers {
   }
 
   /**
+   * Return the number of digits in a number.
+   */
+  public static final int digitCount(long n) {
+    return (int) (Math.log10(n) + 1);
+  }
+
+  /**
    * Return true if an number is pandigital.
    */
   public static final boolean isPandigital(long n, boolean includeZero) {
-    int length = (int) (Math.log10(n) + 1);
+    int length = digitCount(n);
     int[] digits = new int[length];
     long digitSum = 0;
     boolean containsZero = false;
