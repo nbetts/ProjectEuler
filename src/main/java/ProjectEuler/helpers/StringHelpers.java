@@ -47,6 +47,19 @@ public class StringHelpers {
   }
 
   /**
+   * Return the sum of the integers in a string.
+   */
+  public static final int sumDigits(String string) {
+    int sum = 0;
+
+    for (char digit : string.toCharArray()) {
+      sum += Character.getNumericValue(digit);
+    }
+
+    return sum;
+  }
+
+  /**
    * Return true if a string is comprised of unique digits.
    */
   public static boolean isUniqueDigits(String string) {
